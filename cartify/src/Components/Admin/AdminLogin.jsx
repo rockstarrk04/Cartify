@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const AdminLogin = () => {
   let [formdata, setformdata] = useState({
@@ -43,21 +44,21 @@ const AdminLogin = () => {
         email: true,
         password: false
       })
-      alert("Email is Invalid")
+      toast.error("Email is Invalid")
     }
     else if (password !== admin_password) {
       seterror({
         email: false,
         password: true
       })
-      alert("Password is not correct")
+      toast.error("Password is not correct")
     }
     else {
       seterror({
         email: false,
         password: false
       })
-      alert("Welcome")
+      toast.success("Login Success")
     }
   }
 
